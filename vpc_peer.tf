@@ -90,7 +90,7 @@ resource "aws_route_table" "peer-rds" {
 
 
 
-#peer NAT SUBNET ROUTE TABLE ASSOCIATION
+#PEER NAT SUBNET ROUTE TABLE ASSOCIATION
 
 resource "aws_route_table_association" "peer-nat-2a" {
   provider  = aws.peer
