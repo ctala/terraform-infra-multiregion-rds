@@ -14,6 +14,7 @@ resource "aws_rds_cluster" "primary" {
   database_name             = "example_db"
   global_cluster_identifier = aws_rds_global_cluster.example.id
   db_subnet_group_name      = aws_db_subnet_group.default_db_subnet_group.name
+  skip_final_snapshot = true
 }
 
 resource "aws_rds_cluster_instance" "primary" {
@@ -32,6 +33,7 @@ resource "aws_rds_cluster" "secondary" {
   cluster_identifier        = "test-secondary-cluster"
   global_cluster_identifier = aws_rds_global_cluster.example.id
   db_subnet_group_name      = aws_db_subnet_group.default_db_subnet_group-peer.name
+  skip_final_snapshot = true
 
 }
 
